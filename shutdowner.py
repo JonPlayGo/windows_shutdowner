@@ -70,17 +70,7 @@ seconds_entry = Entry(root,width=6, validate="key", validatecommand=(reg, '%P'))
 seconds_entry.insert(0, seconds)
 seconds_entry.place(x=110,y=24)
 
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-
-config_button_image = tk.PhotoImage(file=resource_path("clip.png"))
+config_button_image = tk.PhotoImage(file="clip.png")
 config_button = Button(root,width=15,height=15,image=config_button_image,command=input_config)
 config_button.place(x=180,y=24)
 
